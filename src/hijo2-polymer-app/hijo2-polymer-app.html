@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="hijo2-polymer-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class Hijo2PolymerApp extends Polymer.Element {
+      static get is() { return 'hijo2-polymer-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'hijo2-polymer-app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(Hijo2PolymerApp.is, Hijo2PolymerApp);
+  </script>
+</dom-module>
