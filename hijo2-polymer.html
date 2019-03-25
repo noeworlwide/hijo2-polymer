@@ -1,0 +1,74 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-repeat.html">
+<dom-module id="hijo2-polymer">
+
+  <template id="">
+    <style media="screen">
+      :host{
+        padding: 10px;
+      }
+      table{
+        border: 3px solid rgb(37, 95, 124);
+        text-align: center,
+        width: auto
+      }
+      td{
+        width: auto;
+      }
+      tr.header-table{
+        background-color: rgb(37, 95, 124);
+        color: rgb(187, 227, 247);
+        font-size: 16px;
+      }
+    </style>
+
+    <section>
+      <h2>Lista de Estados</h2>
+      <ul>
+        <template is="dom-repeat" items="{{fields}}" as="actualItem">
+          <li>[[actualItem.nombre]]</li>
+        </template>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tabla de Estados</h2>
+      <table>
+        <tr class="header-table">
+          <td>#</td>
+          <td>Nombre del Estado</td>
+          <td>Abreviatura</td>
+        </tr>
+        <template is="dom-repeat" items="{{fields}}" as="actualItem">
+          <tr>
+            <td>[[index]]</td>
+            <td>[[actualItem.nombre]]</td>
+            <td>[[actualItem.abr]]</td>
+          </tr>
+        </template>
+      </table>
+    </section>
+  </template>
+
+  <script type="text/javascript">
+    class Hijo2Polymer extends Polymer.Element{
+      static get is(){
+        return "hijo2-polymer";
+      }
+      constructor(){
+        super();
+      }
+      static get properties(){
+        return{
+          fields : {
+            type: Array,
+            value :
+              () => []
+          }
+        }
+      }
+    }
+    window.customElements.define(Hijo2Polymer.is, Hijo2Polymer)
+  </script>
+
+</dom-module>

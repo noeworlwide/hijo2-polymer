@@ -12,9 +12,31 @@
 
     <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
-    <link rel="import" href="/src/hijo2-polymer-app/hijo2-polymer-app.html">
+    <!-- <link rel="import" href="/src/hijo2-polymer-app/hijo2-polymer-app.html"> -->
+    <link rel="import" href="./hijo2-polymer.html">
+    <link rel="import" href="../polymer/lib/elements/dom-bind.html">
   </head>
   <body>
-    <hijo2-polymer-app></hijo2-polymer-app>
+    <dom-bind>
+      <template>
+        <hijo2-polymer fields="[[fields]]"></hijo2-polymer>
+      </template>
+
+    </dom-bind>
+    
+    <button type="button" name="button">uno</button>
+    <button type="button" name="button">dos</button>
+
+    <!-- <hijo2-polymer-app></hijo2-polymer-app> -->
+    <script type="text/javascript">
+    const bindeado = document.querySelector('dom-bind');
+    bindeado.fields = [
+      { nombre : "Aguascalientes", abr : "AGS" },
+      { nombre : "Ciudad de México", abr : "CDMX" },
+      { nombre : "Veracruz", abr : "VER" },
+      { nombre : "Zacatecas", abr : "ZAC" }
+    ];
+    console.warn(bindeado.fields);
+    </script>
   </body>
 </html>
