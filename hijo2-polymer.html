@@ -25,9 +25,10 @@
     <section>
       <h2>Lista de Estados</h2>
       <ul>
-        <template is="dom-repeat" items="{{fields}}" as="actualItem">
-          <li>[[actualItem.nombre]]</li>
-        </template>
+        <li>Veracruz</li>
+        <li>Ciudad de México</li>
+        <li>Puebla</li>
+        <li>Yucatan</li>
       </ul>
     </section>
 
@@ -39,13 +40,11 @@
           <td>Nombre del Estado</td>
           <td>Abreviatura</td>
         </tr>
-        <template is="dom-repeat" items="{{fields}}" as="actualItem">
-          <tr>
-            <td>[[index]]</td>
-            <td>[[actualItem.nombre]]</td>
-            <td>[[actualItem.abr]]</td>
-          </tr>
-        </template>
+        <tr>
+          <td>1</td>
+          <td>Ciudad de México</td>
+          <td>CDMX</td>
+        </tr>
       </table>
     </section>
   </template>
